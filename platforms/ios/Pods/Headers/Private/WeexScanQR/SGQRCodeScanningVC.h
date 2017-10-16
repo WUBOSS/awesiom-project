@@ -1,0 +1,1 @@
+../../../WeexScanQR/ios/Sources/SGQRCodeScanningVC.h
