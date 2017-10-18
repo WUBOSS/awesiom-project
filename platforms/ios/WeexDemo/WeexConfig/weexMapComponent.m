@@ -1175,15 +1175,15 @@ WX_EXPORT_METHOD(@selector(removeLineOverlay:))
 
 - (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
 {
-    MAAnnotationView *userLocationView = [mapView viewForAnnotation:mapView.userLocation];
-    if (!updatingLocation && userLocationView)
-    {
-        [UIView animateWithDuration:0.1 animations:^{
-            
-            double degree = userLocation.heading.trueHeading - self.mapview.rotationDegree;
-            userLocationView.transform = CGAffineTransformMakeRotation(degree * M_PI / 180.f );
-            
-        }];
-    }
+//    MAAnnotationView *userLocationView = [mapView viewForAnnotation:mapView.userLocation];
+//    if (!updatingLocation && userLocationView)
+//    {
+//        [UIView animateWithDuration:0.1 animations:^{
+//            
+//            double degree = userLocation.heading.trueHeading - self.mapview.rotationDegree;
+//            userLocationView.transform = CGAffineTransformMakeRotation(degree * M_PI / 180.f );
+//            
+//        }];
+//    }
 }
 @end
