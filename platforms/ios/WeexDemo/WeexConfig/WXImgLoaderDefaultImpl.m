@@ -47,6 +47,12 @@
         
         return [WXXCassetsLoaderOperation new];
     }
+    if ([url hasPrefix:@"store:"]) {
+        UIImage *image = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:url];
+        completedBlock(image, nil, YES);
+        
+        return [WXXCassetsLoaderOperation new];
+    }
     if ([url hasPrefix:@"//"]) {
         url = [@"http:" stringByAppendingString:url];
     }

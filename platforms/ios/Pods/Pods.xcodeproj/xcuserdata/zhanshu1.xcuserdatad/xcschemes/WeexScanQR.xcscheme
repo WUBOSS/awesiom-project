@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A5B1D4320EEEDEAF33118CFF17A41476'
+               BlueprintIdentifier = '2D5FC56687A89BEDF04C0DDD209960DB'
                BlueprintName = 'WeexScanQR'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libWeexScanQR.a'>

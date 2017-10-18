@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MJExtension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>NatCamera.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,37 +57,42 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1ACB3F2A536CFC12B2B2E3F15C685AB2</key>
+		<key>06E0C48C631F482C2852CFFB2D1E07A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2AFBAC50824C94439D5F99F106AD1E8B</key>
+		<key>2D42B51C50C4F82C399A46316322EF1B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>65AA188727D63A7281E7100412C86106</key>
+		<key>2D5FC56687A89BEDF04C0DDD209960DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>66238FD4D0205EEC0EFAC997554B0E69</key>
+		<key>9EAB3E42EF957541E6C3C76D35FD008E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C4C563B7A0CF572F84DA375119B3433</key>
+		<key>BC527329FF42529EC3C0A79C10FA680E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A5B1D4320EEEDEAF33118CFF17A41476</key>
+		<key>C5A2818A58B7CEB2D1B8C7E2F33C1114</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D64491AE1252265401CFC45C87F404FE</key>
+		<key>D902A7476C30FDDB363CA756353D6404</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9A9C86658C35B6D1F6E4476AD5BA34E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

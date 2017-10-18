@@ -8,6 +8,7 @@ PODS:
   - AMapSearch (5.4.0):
     - AMapFoundation (~> 1.4)
   - ATSDK-Weex (0.0.1)
+  - MJExtension (3.0.13)
   - MOBFoundation (3.0.2)
   - NatCamera (0.0.2)
   - SDWebImage (3.7.5):
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - AMapNavi
   - AMapSearch
   - ATSDK-Weex (= 0.0.1)
+  - MJExtension
   - MOBFoundation
   - SDWebImage (= 3.7.5)
   - ShareSDK3
@@ -72,6 +74,7 @@ SPEC CHECKSUMS:
   AMapNavi: 3f553beb42afdc4c18b2ca8137f9363038d8783d
   AMapSearch: 97042f81c1c8ea8adc4b1dadf1b1a688210aa141
   ATSDK-Weex: 1b27558f4336d77fb97704d34fc6ad1fd468592c
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MOBFoundation: d5e27c4638d911d3c7501aa5df458955d4814359
   NatCamera: 99304f801d5c40511114a372e6c25edf3b56693e
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
@@ -84,6 +87,6 @@ SPEC CHECKSUMS:
   WeexSDK: 5282685df6d7279213a51a3142b915759f6e3413
   WXDevtool: 6c837383e778a9442ee500db4069a95be321dac6
 
-PODFILE CHECKSUM: 5212eada97f0cda15bd4318e1d6c8a59be038868
+PODFILE CHECKSUM: f82f6e1aaadd6405beabdfc9c9a53358274db30a
 
 COCOAPODS: 1.0.1

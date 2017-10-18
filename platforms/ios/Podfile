@@ -20,6 +20,7 @@ def common
     pod 'AMap3DMap'
     pod 'AMapSearch'
     pod 'AMapNavi'
+    pod 'MJExtension'
  end   
 target 'WeexDemo' do
     common
