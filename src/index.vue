@@ -1,13 +1,13 @@
 <template>
-  <div class="wrapper" @click="update">
-    <!--<image :src="logoUrl" class="logo"></image>-->
+  <div class="wrapper" @click="update" >
+    <image :src="logoUrl" class="logo" ref='image'></image>
     <!--<text class="title">Hello {{target}}</text>-->
-    <text class="desc" @click="createPhoto">地图是否在国外</text>
-    <!--<text class="desc" @click="createAction">相机</text>-->
+    <text class="desc" @click="createPhoto">加大头针</text>
+    <text class="desc" @click="createAction">移除大头针</text>
     <!--<text class="desc" @click="scanQR">扫码</text>-->
     <!--<text class="desc" @click="share">分享</text>-->
 
-    <WXMapComponent ref='WXMapComponent' class="map"  mapkey="85dce3c69f70a9615e56519b8e7ecb0b" zoomLevel="15" mapType="0" :region="sss">
+    <WXMapComponent ref='WXMapComponent' class="map"  mapkey="85dce3c69f70a9615e56519b8e7ecb0b" zoomLevel="15" mapType="0" showsUserLocation="1">
 
     </WXMapComponent>
     <!--<image class="img" style="width: 300px; height: 300px;" src="xcassets:reload"></image>-->
@@ -29,7 +29,7 @@
   .map { margin-top: 0px; margin-bottom: 0px;  flex: 1;
   }
   .title { padding-top:40px; padding-bottom: 40px; font-size: 48px; }
-  .logo { width: 360px; height: 156px; }
+  .logo { width: 300px; height: 156px;  }
   .desc { padding-top: 20px; color:#888; font-size: 40px;}
 </style>
 
@@ -48,7 +48,17 @@
     data: {
       logoUrl: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png',
       target: 'World',
-        sss:{latitude: "31.139111",longitude: "121.71656",latitudeDelta: "0.1",longitudeDelta: "0.1"}
+        sss:{points:[{latitude:39.938698,longitude:116.275177},{latitude:39.966069,longitude:116.289253},{latitude:39.944226,longitude:116.306076},{latitude:39.966069,longitude:116.322899},{latitude:39.938698,longitude:116.336975}],
+            fillColor:"#B0E0E6",
+            strokeColor:"#DC143C",
+            lineWidth:20,
+            lineJoinType:1,
+            lineCapType:2,
+            miterLimit:10,
+            lineDash:1,
+            ID:0,
+      }
+
     },
     methods: {
       update: function (e) {
@@ -57,24 +67,18 @@
       },
         createAction: function() {
 
-            var WXCameraModule = weex.requireModule('weexCamera');
-            WXCameraModule.show();
+            this.$refs.WXMapComponent.removeLineOverlay(
+
+                "0"
+            );
         }
         ,
         createPhoto:function () {
+          this.$refs.WXMapComponent.addLineOverlay(
+              this.sss
+          );
 
-
-            this.$refs.WXMapComponent.compassSize(function (result) {
-                var modal = weex.requireModule('modal')
-                modal.toast({
-                    message: JSON.stringify(result),
-                    duration: 0.7
-                })
-            });
-
-
-
-//            var WXCameraModule = weex.requireModule('WXCameraModule');
+//              var WXCameraModule = weex.requireModule('WXCameraModule');
 //            WXCameraModule.takePhoto({"type":"photoAlbum"},function(ret) {
 //                nativeLog(ret);
 //            });
