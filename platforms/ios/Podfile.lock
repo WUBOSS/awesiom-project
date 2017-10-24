@@ -1,4 +1,12 @@
 PODS:
+  - AlicloudPush (1.9.5.1):
+    - AlicloudUtils
+  - AlicloudUT (5.2.0.1):
+    - AlicloudUTDID
+  - AlicloudUTDID (1.1.0.16)
+  - AlicloudUtils (1.2.2):
+    - AlicloudUT
+    - AlicloudUTDID
   - AMap3DMap (5.4.0):
     - AMapFoundation (~> 1.3)
   - AMapFoundation (1.4.2)
@@ -8,6 +16,7 @@ PODS:
   - AMapSearch (5.4.0):
     - AMapFoundation (~> 1.4)
   - ATSDK-Weex (0.0.1)
+  - GTSDK (2.0.0.0)
   - MJExtension (3.0.13)
   - MOBFoundation (3.0.2)
   - NatCamera (0.0.2)
@@ -31,6 +40,15 @@ PODS:
   - WeexCamera (0.0.1):
     - WeexPluginLoader
     - WeexSDK
+  - WeexMapcomponent (0.0.1):
+    - AMap3DMap
+    - AMapNavi
+    - AMapSearch
+    - MJExtension
+    - MOBFoundation
+    - SDWebImage (= 3.7.5)
+    - WeexPluginLoader
+    - WeexSDK
   - Weexplugin (0.0.1):
     - NatCamera (= 0.0.2)
     - WeexSDK
@@ -41,27 +59,34 @@ PODS:
     - WeexSDK
   - WeexSDK (0.15.1):
     - SocketRocket
+  - WeexShareSdk (0.0.1):
+    - ShareSDK3
+    - ShareSDK3/ShareSDKPlatforms/QQ
+    - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+    - ShareSDK3/ShareSDKPlatforms/WeChat
+    - ShareSDK3/ShareSDKUI
+    - WeexPluginLoader
+    - WeexSDK
   - WXDevtool (0.15.3):
     - WeexSDK
 
 DEPENDENCIES:
+  - AlicloudPush (~> 1.9.2)
   - AMap3DMap
   - AMapNavi
   - AMapSearch
   - ATSDK-Weex (= 0.0.1)
+  - GTSDK
   - MJExtension
   - MOBFoundation
   - SDWebImage (= 3.7.5)
-  - ShareSDK3
-  - ShareSDK3/ShareSDKPlatforms/QQ
-  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
-  - ShareSDK3/ShareSDKPlatforms/WeChat
-  - ShareSDK3/ShareSDKUI
   - SocketRocket (= 0.4.2)
   - WeexCamera (= 0.0.1)
+  - WeexMapcomponent (= 0.0.1)
   - Weexplugin (from `./Weexplugin/`)
   - WeexScanQR (= 0.0.1)
   - WeexSDK
+  - WeexShareSdk (= 0.0.1)
   - WXDevtool
 
 EXTERNAL SOURCES:
@@ -69,11 +94,16 @@ EXTERNAL SOURCES:
     :path: ./Weexplugin/
 
 SPEC CHECKSUMS:
+  AlicloudPush: 8c757f7411c171cf814c2cd78861749a4786b04b
+  AlicloudUT: 9f20dcfd2753de09261b6c279245da1650a34932
+  AlicloudUTDID: f5a7bc1420c5f83e3bd40296e5ab2e5a804a12f8
+  AlicloudUtils: 2437ae7fd2b39343539e8f48aa1f7bf6f5a6cff1
   AMap3DMap: 3eb906ac6b9d488413ab26c24f67eca4b4ad4641
   AMapFoundation: 6c0471c9a6a0ad17dad46e3d800ad56ca170f82a
   AMapNavi: 3f553beb42afdc4c18b2ca8137f9363038d8783d
   AMapSearch: 97042f81c1c8ea8adc4b1dadf1b1a688210aa141
   ATSDK-Weex: 1b27558f4336d77fb97704d34fc6ad1fd468592c
+  GTSDK: 10882452fbd63e738334ea9463a7d59cbb172622
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MOBFoundation: d5e27c4638d911d3c7501aa5df458955d4814359
   NatCamera: 99304f801d5c40511114a372e6c25edf3b56693e
@@ -81,12 +111,14 @@ SPEC CHECKSUMS:
   ShareSDK3: a01a35da3cd8f4d10d7f4394c7c42f8113392182
   SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
   WeexCamera: 8e88762180ae35fe0fa38a93bfd825ac745c7447
+  WeexMapcomponent: 4beab73adf756593e79dd1ed0a18fa70dbf2d649
   Weexplugin: 857ceadf1b2923da9c7da4c1286f0f5602d44bd3
   WeexPluginLoader: 85c1304f8ba29864e58531614a0acfeceef1b85c
   WeexScanQR: 37db6d7477386028fdf76c858d18483efdc47103
   WeexSDK: 5282685df6d7279213a51a3142b915759f6e3413
+  WeexShareSdk: 9cd0fcfccb6878fb0a5b09ea5a9e3287927d1188
   WXDevtool: 6c837383e778a9442ee500db4069a95be321dac6
 
-PODFILE CHECKSUM: f82f6e1aaadd6405beabdfc9c9a53358274db30a
+PODFILE CHECKSUM: 3f5eb6c60c8aca94c6964cb7f6452e0493202469
 
 COCOAPODS: 1.0.1

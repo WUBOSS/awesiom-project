@@ -28,15 +28,9 @@
 		84361D5B1CA10F8E00F43825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 775BEE8A1C1E8ECC008D1629 /* Assets.xcassets */; };
 		84D7CAC71CE3266C00D48D46 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7475ACA01CD8444A0044E96C /* libsqlite3.0.tbd */; };
 		8A0B5EFFF75BF82EA481983D /* libPods-WeexUITestDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E48C20F443AA337D1FE97622 /* libPods-WeexUITestDemo.a */; };
-		8D51541E1F8B7C6200C31E58 /* WXShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D51541D1F8B7C6200C31E58 /* WXShareModule.m */; };
-		8D7CD9911F95CF62003941D8 /* WXMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7CD9901F95CF62003941D8 /* WXMapAnnotation.m */; };
-		8D838DD31F946421006753B0 /* UIColor+NotRGB.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D838DD21F946421006753B0 /* UIColor+NotRGB.m */; };
+		8D78AFCB1F99D469005316B7 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D78AFCA1F99D469005316B7 /* UserNotifications.framework */; };
 		8D9745DD1F8B1AF300E92FF8 /* WXXCassetsLoaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9745DC1F8B1AF300E92FF8 /* WXXCassetsLoaderOperation.m */; };
 		8D9745E01F8B46BC00E92FF8 /* WXCameraModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9745DF1F8B46BC00E92FF8 /* WXCameraModule.m */; };
-		8D98D77C1F8F4B78003520F9 /* weexMapComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D98D77B1F8F4B78003520F9 /* weexMapComponent.m */; };
-		8DAB34351F974AA100069844 /* WXMapLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB34341F974AA100069844 /* WXMapLine.m */; };
-		8DAB34381F974C2100069844 /* WXMapCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB34371F974C2100069844 /* WXMapCoordinate.m */; };
-		8DAB343B1F9750DB00069844 /* WXMapPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DAB343A1F9750DB00069844 /* WXMapPolyline.m */; };
 		D3DB97659EA84DC3ADEFA660 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B116DBF2254E48A0816816AE /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D5FFB0F3F6F246E9A93F5369 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 983B223F3951480F8D2048E3 /* CoreLocation.framework */; };
 		DC5E503E1D0D97130059F0EB /* weex.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5E503C1D0D97130059F0EB /* weex.png */; };
@@ -94,24 +88,12 @@
 		775BEE9A1C1E8ECC008D1629 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84361D751CA10F8E00F43825 /* WeexUITestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeexUITestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84361D761CA10F8F00F43825 /* WeexUITestDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WeexUITestDemo-Info.plist"; path = "/Users/admin/Documents/03_project_git/01_Weex/weex-samples/ios/WeexUITestDemo-Info.plist"; sourceTree = "<absolute>"; };
-		8D51541C1F8B7C6200C31E58 /* WXShareModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXShareModule.h; sourceTree = "<group>"; };
-		8D51541D1F8B7C6200C31E58 /* WXShareModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXShareModule.m; sourceTree = "<group>"; };
-		8D7CD98F1F95CF62003941D8 /* WXMapAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXMapAnnotation.h; sourceTree = "<group>"; };
-		8D7CD9901F95CF62003941D8 /* WXMapAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXMapAnnotation.m; sourceTree = "<group>"; };
-		8D838DD11F946421006753B0 /* UIColor+NotRGB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+NotRGB.h"; sourceTree = "<group>"; };
-		8D838DD21F946421006753B0 /* UIColor+NotRGB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NotRGB.m"; sourceTree = "<group>"; };
+		8D78AFC91F99D325005316B7 /* WeexDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeexDemo.entitlements; sourceTree = "<group>"; };
+		8D78AFCA1F99D469005316B7 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		8D9745DB1F8B1AF300E92FF8 /* WXXCassetsLoaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXXCassetsLoaderOperation.h; sourceTree = "<group>"; };
 		8D9745DC1F8B1AF300E92FF8 /* WXXCassetsLoaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXXCassetsLoaderOperation.m; sourceTree = "<group>"; };
 		8D9745DE1F8B46BC00E92FF8 /* WXCameraModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXCameraModule.h; sourceTree = "<group>"; };
 		8D9745DF1F8B46BC00E92FF8 /* WXCameraModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXCameraModule.m; sourceTree = "<group>"; };
-		8D98D77A1F8F4B78003520F9 /* weexMapComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = weexMapComponent.h; sourceTree = "<group>"; };
-		8D98D77B1F8F4B78003520F9 /* weexMapComponent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weexMapComponent.m; sourceTree = "<group>"; };
-		8DAB34331F974AA100069844 /* WXMapLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXMapLine.h; sourceTree = "<group>"; };
-		8DAB34341F974AA100069844 /* WXMapLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXMapLine.m; sourceTree = "<group>"; };
-		8DAB34361F974C2100069844 /* WXMapCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXMapCoordinate.h; sourceTree = "<group>"; };
-		8DAB34371F974C2100069844 /* WXMapCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXMapCoordinate.m; sourceTree = "<group>"; };
-		8DAB34391F9750DB00069844 /* WXMapPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXMapPolyline.h; sourceTree = "<group>"; };
-		8DAB343A1F9750DB00069844 /* WXMapPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXMapPolyline.m; sourceTree = "<group>"; };
 		9420131417A731ED089B0814 /* Pods-WeexDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeexDemo/Pods-WeexDemo.release.xcconfig"; sourceTree = "<group>"; };
 		983B223F3951480F8D2048E3 /* CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B116DBF2254E48A0816816AE /* ImageIO.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
@@ -128,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D78AFCB1F99D469005316B7 /* UserNotifications.framework in Frameworks */,
 				0A996E0A1E249DAF0055CB7E /* libstdc++.tbd in Frameworks */,
 				DC6DD9D21CFE9BC400549297 /* libsqlite3.0.tbd in Frameworks */,
 				EAEC716BE3E43DBC8494EC51 /* libPods-WeexDemo.a in Frameworks */,
@@ -172,10 +155,6 @@
 				8D9745DC1F8B1AF300E92FF8 /* WXXCassetsLoaderOperation.m */,
 				8D9745DE1F8B46BC00E92FF8 /* WXCameraModule.h */,
 				8D9745DF1F8B46BC00E92FF8 /* WXCameraModule.m */,
-				8D51541C1F8B7C6200C31E58 /* WXShareModule.h */,
-				8D51541D1F8B7C6200C31E58 /* WXShareModule.m */,
-				8D98D77A1F8F4B78003520F9 /* weexMapComponent.h */,
-				8D98D77B1F8F4B78003520F9 /* weexMapComponent.m */,
 			);
 			path = WeexConfig;
 			sourceTree = "<group>";
@@ -196,6 +175,7 @@
 		327BB19797F63D5309FB91BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8D78AFCA1F99D469005316B7 /* UserNotifications.framework */,
 				0A996E091E249DAF0055CB7E /* libstdc++.tbd */,
 				7475ACA01CD8444A0044E96C /* libsqlite3.0.tbd */,
 				7601607D735D7F8D88971230 /* libPods-WeexDemo.a */,
@@ -241,6 +221,7 @@
 		775BEE7D1C1E8ECC008D1629 /* WeexDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8D78AFC91F99D325005316B7 /* WeexDemo.entitlements */,
 				74CC79EC1C2B9FC600829368 /* Demo */,
 				775BEE8A1C1E8ECC008D1629 /* Assets.xcassets */,
 				0AE277DB1DE56A5600C6D86A /* config.xml */,
@@ -287,16 +268,6 @@
 				0A3122A61E1F41E30041B972 /* WeexConfig */,
 				775BEE811C1E8ECC008D1629 /* AppDelegate.h */,
 				775BEE821C1E8ECC008D1629 /* AppDelegate.m */,
-				8D7CD98F1F95CF62003941D8 /* WXMapAnnotation.h */,
-				8D7CD9901F95CF62003941D8 /* WXMapAnnotation.m */,
-				8D838DD11F946421006753B0 /* UIColor+NotRGB.h */,
-				8D838DD21F946421006753B0 /* UIColor+NotRGB.m */,
-				8DAB34331F974AA100069844 /* WXMapLine.h */,
-				8DAB34341F974AA100069844 /* WXMapLine.m */,
-				8DAB34391F9750DB00069844 /* WXMapPolyline.h */,
-				8DAB343A1F9750DB00069844 /* WXMapPolyline.m */,
-				8DAB34361F974C2100069844 /* WXMapCoordinate.h */,
-				8DAB34371F974C2100069844 /* WXMapCoordinate.m */,
 				7453E3641C9FA971001EB427 /* DemoDefine.h */,
 			);
 			name = Source;
@@ -389,8 +360,13 @@
 				TargetAttributes = {
 					775BEE7A1C1E8ECC008D1629 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = RQBBRH4C2W;
+						DevelopmentTeam = CAARUXYBT4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					775BEE931C1E8ECC008D1629 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -609,22 +585,15 @@
 			files = (
 				0A4A05FB1E0405070046E1BE /* WXScannerVC.m in Sources */,
 				0A3122AF1E1F41E30041B972 /* WeexSDKManager.m in Sources */,
-				8D98D77C1F8F4B78003520F9 /* weexMapComponent.m in Sources */,
 				0A4A05FA1E0405070046E1BE /* WXDemoViewController.m in Sources */,
 				0A3122AE1E1F41E30041B972 /* WeexConfigParser.m in Sources */,
 				8D9745E01F8B46BC00E92FF8 /* WXCameraModule.m in Sources */,
 				775BEE831C1E8ECC008D1629 /* AppDelegate.m in Sources */,
-				8DAB343B1F9750DB00069844 /* WXMapPolyline.m in Sources */,
 				8D9745DD1F8B1AF300E92FF8 /* WXXCassetsLoaderOperation.m in Sources */,
 				0A3122AD1E1F41E30041B972 /* WeexBundleUrlLoder.m in Sources */,
-				8D838DD31F946421006753B0 /* UIColor+NotRGB.m in Sources */,
-				8DAB34381F974C2100069844 /* WXMapCoordinate.m in Sources */,
-				8D51541E1F8B7C6200C31E58 /* WXShareModule.m in Sources */,
-				8DAB34351F974AA100069844 /* WXMapLine.m in Sources */,
 				0A4A05F91E0405070046E1BE /* UIViewController+WXDemoNaviBar.m in Sources */,
 				775BEE801C1E8ECC008D1629 /* main.m in Sources */,
 				0A7758D71EA0D39C00AE9815 /* WXImgLoaderDefaultImpl.m in Sources */,
-				8D7CD9911F95CF62003941D8 /* WXMapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,9 +717,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = WeexDemo/WeexDemo.entitlements;
 				CODE_SIGN_IDENTITY = Automatic;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = RQBBRH4C2W;
+				DEVELOPMENT_TEAM = CAARUXYBT4;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -779,7 +749,7 @@
 					"$(inherited)",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhan.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zskj.PointManager007;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -793,9 +763,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = WeexDemo/WeexDemo.entitlements;
 				CODE_SIGN_IDENTITY = Automatic;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = RQBBRH4C2W;
+				DEVELOPMENT_TEAM = CAARUXYBT4;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -824,7 +795,7 @@
 					"$(inherited)",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhan.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zskj.PointManager007;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

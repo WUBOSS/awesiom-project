@@ -1,0 +1,1 @@
+../../../WeexMapcomponent/ios/Sources/WXMapPolyline.h

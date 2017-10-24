@@ -7,6 +7,10 @@
  */
 
 #import "AppDelegate.h"
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+#import <UserNotifications/UserNotifications.h>
+#endif
+
 #import "DemoDefine.h"
 #import <WeexSDK/WeexSDK.h>
 #import <AVFoundation/AVFoundation.h>
@@ -15,10 +19,14 @@
 #import "WXScannerVC.h"
 #import "WXImgLoaderDefaultImpl.h"
 #import "WXCameraModule.h"
+#import <GTSDK/GeTuiSdk.h>
 
-#import "WXShareModule.h"
 #import "weexMapComponent.h"
-@interface AppDelegate ()
+#define kGtAppId @"D4IfHqi1uV5UwcfxhRtFx4" ////个推测试
+#define kGtAppKey @"v1I1kW1VYr59YZTHnOkTY5"
+#define kGtAppSecret @"dM21v2dHC1ArqbHQlgkA68"
+
+@interface AppDelegate ()<GeTuiSdkDelegate,UNUserNotificationCenterDelegate>
 @end
 
 @implementation AppDelegate
@@ -35,8 +43,8 @@
     [WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)];
     
     [WXSDKEngine registerModule:@"WXCameraModule" withClass:[WXCameraModule class]];
-    
-     [WXSDKEngine registerModule:@"WXShareModule" withClass:[WXShareModule class]];
+
+     
     [WXSDKEngine registerComponent:@"WXMapComponent" withClass:[weexMapComponent class]];
     [self.window makeKeyAndVisible];
     
@@ -45,8 +53,70 @@
     
     [self checkUpdate];
     
+   // [GeTuiSdk startSdkWithAppId:kGtAppId appKey:kGtAppKey appSecret:kGtAppSecret delegate:self];
+    // 注册 APNs
+    [CloudPushSDK asyncInit:@"24663160" appSecret:@"149a9c56d044fdf100d01008f39f6162" callback:^(CloudPushCallbackResult *res) {
+        if (res.success) {
+            NSLog(@"Push SDK init success, deviceId: %@.", [CloudPushSDK getDeviceId]);
+        } else {
+            NSLog(@"Push SDK init failed, error: %@", res.error);
+        }
+    }];
+    [CloudPushSDK sendNotificationAck:launchOptions];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onMessageReceived:)
+                                                 name:@"CCPDidReceiveMessageNotification"
+                                               object:nil];
+    [self registerRemoteNotification];
     return YES;
 }
+- (void)onMessageReceived:(NSNotification *)notification {
+    CCPSysMessage *message = [notification object];
+    NSString *title = [[NSString alloc] initWithData:message.title encoding:NSUTF8StringEncoding];
+    NSString *body = [[NSString alloc] initWithData:message.body encoding:NSUTF8StringEncoding];
+    NSLog(@"Receive message title: %@, content: %@.", title, body);
+     NSLog(@"Receive message title: %@, ", notification.userInfo);
+}
+/** 注册 APNs */
+- (void)registerRemoteNotification {
+    /*
+     警告：Xcode8 需要手动开启"TARGETS -> Capabilities -> Push Notifications"
+     */
+    
+    /*
+     警告：该方法需要开发者自定义，以下代码根据 APP 支持的 iOS 系统不同，代码可以对应修改。
+     以下为演示代码，注意根据实际需要修改，注意测试支持的 iOS 系统都能获取到 DeviceToken
+     */
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0) {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0 // Xcode 8编译会调用
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = self;
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionCarPlay) completionHandler:^(BOOL granted, NSError *_Nullable error) {
+            if (!error) {
+                NSLog(@"request authorization succeeded!");
+            }
+        }];
+        
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+#else // Xcode 7编译会调用
+        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+#endif
+    } else if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    } else {
+        UIRemoteNotificationType apn_type = (UIRemoteNotificationType)(UIRemoteNotificationTypeAlert |
+                                                                       UIRemoteNotificationTypeSound |
+                                                                       UIRemoteNotificationTypeBadge);
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:apn_type];
+    }
+}
+
 
 -(void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
 {
@@ -59,6 +129,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     
+   
 #ifdef UITEST
 #if !TARGET_IPHONE_SIMULATOR
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -126,6 +197,58 @@
         }];
     }
 }
+-(void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [[WXSDKManager bridgeMgr].topInstance fireGlobalEvent:@"applicationDidEnterBackground" params:@{@"sa":@"111"}];
+}
+/** 远程通知注册成功委托 */
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"\n>>>[DeviceToken Success]:%@\n\n", token);
+    
+    // 向个推服务器注册deviceToken
+   // [GeTuiSdk registerDeviceToken:token];
+    [CloudPushSDK registerDevice:deviceToken withCallback:^(CloudPushCallbackResult *res) {
+        if (res.success) {
+            NSLog(@"Register deviceToken success.");
+        } else {
+            NSLog(@"Register deviceToken failed, error: %@", res.error);
+        }
+    }];
+}
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    // 将收到的APNs信息传给个推统计
+    [GeTuiSdk handleRemoteNotification:userInfo];
+    [CloudPushSDK sendNotificationAck:userInfo];
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+
+//  iOS 10: App在前台获取到通知
+
+
+//  iOS 10: 点击通知进入App时触发，在该方法内统计有效用户点击数
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(nonnull void (^)(void))completionHandler {
+    
+    NSLog(@"didReceiveNotification：%@", response.notification.request.content.userInfo);
+    
+    // [ GTSdk ]：将收到的APNs信息传给个推统计
+    [GeTuiSdk handleRemoteNotification:response.notification.request.content.userInfo];
+    [CloudPushSDK sendNotificationAck:response.notification.request.content.userInfo];
+    completionHandler();
+}
+
+#endif
+
+/** SDK启动成功返回cid */
+- (void)GeTuiSdkDidRegisterClient:(NSString *)clientId {
+    //个推SDK已注册，返回clientId
+    NSLog(@"\n>>>[GeTuiSdk RegisterClient]:%@\n\n", clientId);
+}
+
+
 
 #pragma mark
 

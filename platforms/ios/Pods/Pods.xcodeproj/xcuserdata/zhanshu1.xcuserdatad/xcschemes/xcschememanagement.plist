@@ -39,7 +39,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>WeexMapcomponent.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>WeexScanQR.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>WeexShareSdk.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,17 +67,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>06E0C48C631F482C2852CFFB2D1E07A1</key>
+		<key>7E626DBB1672B13E6C3F879143D7EFC5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2D42B51C50C4F82C399A46316322EF1B</key>
+		<key>856C8A228414E6A39839A959A5CC6085</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2D5FC56687A89BEDF04C0DDD209960DB</key>
+		<key>941AA1B1960E8BFF4094E8B36297E523</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>962A429F25B1EE58A28A7839967920E1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>98A19FD66153E14C200959724DE23A06</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,22 +97,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC527329FF42529EC3C0A79C10FA680E</key>
+		<key>BD69186010510D57084B00A47DEE0AE6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C5A2818A58B7CEB2D1B8C7E2F33C1114</key>
+		<key>CED0F69F2ABB2A6321BC6297BF3BB07A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D902A7476C30FDDB363CA756353D6404</key>
+		<key>F5A16A7B9490D0E1B6DB6C896F815953</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E9A9C86658C35B6D1F6E4476AD5BA34E</key>
+		<key>FB6CBFF3EB1F6E4BDF8E63F71C51B9BD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

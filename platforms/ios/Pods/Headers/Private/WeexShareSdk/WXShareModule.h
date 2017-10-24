@@ -1,0 +1,1 @@
+../../../WeexShareSdk/ios/Sources/WXShareModule.h

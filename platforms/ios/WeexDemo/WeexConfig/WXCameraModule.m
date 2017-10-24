@@ -52,4 +52,5 @@ WX_EXPORT_METHOD(@selector(takePhoto:callback:))
     self.callBack(@{@"status":@"success"});
     
 }
+
 @end

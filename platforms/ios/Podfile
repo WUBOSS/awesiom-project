@@ -1,9 +1,13 @@
 source 'git@github.com/CocoaPods/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/aliyun/aliyun-specs.git'
 platform :ios, '7.0'
 #inhibit_all_warnings!
 
 def common
-    pod 'WeexScanQR', '0.0.1'
+            pod 'WeexShareSdk', '0.0.1'
+pod 'WeexMapcomponent', '0.0.1'
+pod 'WeexScanQR', '0.0.1'
     pod 'WeexCamera', '0.0.1'
 	pod 'WeexSDK'
 	pod 'Weexplugin', :path=>'./Weexplugin/'
@@ -11,16 +15,13 @@ def common
     pod 'SDWebImage', '3.7.5'
     pod 'SocketRocket', '0.4.2'
     pod 'ATSDK-Weex', '0.0.1'
-    pod 'ShareSDK3/ShareSDKPlatforms/QQ'
-	pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'
-	pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
-	pod 'ShareSDK3'
-	pod 'ShareSDK3/ShareSDKUI'
 	pod 'MOBFoundation'
     pod 'AMap3DMap'
     pod 'AMapSearch'
     pod 'AMapNavi'
     pod 'MJExtension'
+    pod 'GTSDK'
+    pod 'AlicloudPush', '~> 1.9.2'
  end   
 target 'WeexDemo' do
     common
